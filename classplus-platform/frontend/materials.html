@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Materials - Classplus</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <button class="hamburger" onclick="toggleSidebar()">☰</button>
+  <nav class="sidebar mobile-hidden">
+    <!-- Sidebar same -->
+    <div class="sidebar-header">
+      <div class="logo">Classplus</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-item" onclick="loadPage('dashboard.html')"><a class="nav-link">🏠 Dashboard</a></li>
+      <li class="nav-item" onclick="loadPage('courses.html')"><a class="nav-link">📚 Courses</a></li>
+      <li class="nav-item active"><a class="nav-link">📖 Materials</a></li>
+      <li data-role="student" class="nav-item" onclick="loadPage('payments.html')"><a class="nav-link">💳 Payments</a></li>
+      <li class="nav-item" onclick="logout()"><a class="nav-link">🚪 Logout</a></li>
+    </ul>
+  </nav>
+  <main class="main-content">
+    <div class="container">
+      <h1>Study Materials</h1>
+      <p>Course ID: <span id="courseId">-</span></p>
+      <div id="materialsList" class="course-grid">
+        <p>Select course from dashboard or enter Course ID and load.</p>
+        <button class="btn" onclick="loadCurrentMaterials()">Load Materials</button>
+      </div>
+      <div id="materialViewer" style="margin-top: 40px;"></div>
+    </div>
+  </main>
+  <script src="js/app.js"></script>
+  <script src="js/materials.js"></script>
+</body>
+</html>
+
