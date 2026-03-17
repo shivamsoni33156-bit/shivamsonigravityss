@@ -36,7 +36,13 @@ def submit_payment():
         amount=amount,
         proof_path=proof_path
     )
+    enrollment = Enrollment(
+        student_id=identity['id'],
+        course_id=course_id,
+        status='pending'
+    )
     db.session.add(payment)
+    db.session.add(enrollment)
     db.session.commit()
     
     return jsonify({'message': 'Payment submitted for approval', 'upi': '7229985050', 'bank': 'SBI 30392342115 Zakir Husain'}), 201
