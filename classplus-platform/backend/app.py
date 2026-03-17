@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from .config import Config
-from models import db
+from .models import db
 from flask_jwt_extended import JWTManager
 
 app = Flask(__name__)
@@ -10,7 +10,7 @@ CORS(app)
 db.init_app(app)
 jwt = JWTManager(app)
 
-from auth import auth_bp
+from .auth import auth_bp
 from routes.teacher import teacher_bp
 from routes.student import student_bp
 from routes.payments import payments_bp
